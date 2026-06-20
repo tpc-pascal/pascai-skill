@@ -1,0 +1,63 @@
+name: CI — Kiểm tra chất lượng
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+      - 'assets/**'
+      - '.github/workflows/update-skills.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install package & dev deps
+        run: |
+          pip install -e ".[dev]"
+
+      - name: Chạy tests
+        run: |
+          python -m pytest tests/ -v --tb=short
+
+      - name: Kiểm tra import
+        run: |
+          python -c "from pascai_skill import RuntimeConfig, BaseSkill, SkillRegistry, Bootstrap; print('All imports OK')"
+          python -c "from pascai_skill.adapters import OpenCodeAdapter, ClaudeCodeAdapter, CursorAdapter; print('Adapters OK')"
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install ruff
+
+      - name: Kiểm tra code style
+        run: |
+          ruff check pascai_skill/ scripts/ --ignore=E501

@@ -1,0 +1,84 @@
+name: Tự động cập nhật skills từ upstream
+
+on:
+  schedule:
+    # Chạy mỗi ngày lúc 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+    inputs:
+      create_pr:
+        description: 'Tạo Pull Request thay vì commit trực tiếp'
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install httpx pyyaml
+
+      - name: Kiểm tra cập nhật upstream
+        id: check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/check_upstream_updates.py
+          echo "has_updates=$(git diff --name-only | grep -c 'skill.yaml' || true)" >> $GITHUB_OUTPUT
+
+      - name: Commit cập nhật (nếu có)
+        if: steps.check.outputs.has_updates != '0'
+        run: |
+          git config user.name "pascai-bot"
+          git config user.email "bot@pascai.ai"
+
+          UPDATED=$(git diff --name-only | grep 'skill.yaml' | sed 's|skills/\(.*\)/skill.yaml|\1|' | tr '\n' ' ')
+          DATE=$(date -u '+%Y-%m-%d')
+
+          git add -A
+          git commit -m "chore(upstream): tự động cập nhật skills ($DATE)
+
+          Skills được cập nhật: $UPDATED
+
+          Nguồn: chạy scripts/check_upstream_updates.py"
+
+      - name: Tạo Pull Request (nếu được yêu cầu)
+        if: steps.check.outputs.has_updates != '0' && github.event.inputs.create_pr == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(upstream): tự động cập nhật skills"
+          title: "chore(upstream): cập nhật skills từ upstream"
+          body: |
+            ## Cập nhật tự động từ upstream
+
+            Phát hiện thay đổi mới từ các upstream repositories.
+
+            ### Skills được cập nhật:
+            $(git diff --name-only | grep 'skill.yaml' | sed 's|skills/\(.*\)/skill.yaml|  - \1|')
+
+            ---
+            *Được tạo tự động bởi workflow `update-skills.yml`*
+          branch: upstream-auto-update
+          delete-branch: true
+          labels: auto-update
+
+      - name: Push trực tiếp (mặc định)
+        if: steps.check.outputs.has_updates != '0' && github.event.inputs.create_pr != 'true'
+        run: git push
