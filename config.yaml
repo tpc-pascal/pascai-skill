@@ -1,0 +1,41 @@
+runtime:
+  name: pascai-skill
+  version: 0.1.0
+  data_dir: ./_runtime
+  auto_update: false
+  update_interval_hours: 24
+
+logging:
+  level: INFO
+  format: structured
+  output: console
+
+skills:
+  auto_discover: true
+  skill_dirs:
+    - ./skills
+    - ./_runtime/installed
+  default_enabled: true
+
+adapters:
+  auto_load: true
+  enabled:
+    - opencode
+    - claude_code
+    - cursor
+    - aider
+    - gemini_cli
+    - codex
+
+memory:
+  store: sqlite
+  path: ./_runtime/memory.db
+
+knowledge:
+  store: filesystem
+  path: ./_runtime/knowledge
+
+upstream:
+  cache_dir: ./_runtime/upstream_cache
+  sync_on_install: true
+  check_interval_hours: 24
