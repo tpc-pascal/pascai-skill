@@ -1,0 +1,15 @@
+name: docling_convert
+description: Convert a document file to Markdown using Docling
+inputs:
+  file_path:
+    type: string
+    description: Path to the input file
+  output_dir:
+    type: string
+    description: Directory for output Markdown
+  ocr:
+    type: boolean
+    default: true
+output:
+  type: string
+  description: Path to generated Markdown file

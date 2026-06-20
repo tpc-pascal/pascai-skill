@@ -1,0 +1,14 @@
+# Document Conversion Report
+
+**Source:** {{ source }}
+**Format:** {{ format }}
+**Pages:** {{ page_count }}
+**Conversion Time:** {{ duration }}s
+
+## Structure
+{% for section in sections %}
+- {{ '  ' * section.level }}{{ section.title }}
+{% endfor %}
+
+## Tables Extracted: {{ table_count }}
+## Images Extracted: {{ image_count }}

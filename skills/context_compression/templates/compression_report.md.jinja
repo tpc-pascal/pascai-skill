@@ -1,0 +1,16 @@
+# Compression Report
+
+**Original Size:** {{ original_size }} chars
+**Compressed Size:** {{ compressed_size }} chars
+**Ratio:** {{ "%.1f" | format(ratio) }}x
+**Technique:** {{ technique }}
+
+## Summary
+{{ summary }}
+
+{% if preserved_items %}
+## Preserved
+{% for item in preserved_items %}
+- {{ item }}
+{% endfor %}
+{% endif %}

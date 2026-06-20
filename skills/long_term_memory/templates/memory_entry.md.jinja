@@ -1,0 +1,14 @@
+## {{ category | capitalize }}: {{ title }}
+
+**Created:** {{ created_at }}
+**Source:** {{ source }}
+**Tags:** {{ tags | join(", ") }}
+
+{{ content }}
+
+{% if related %}
+**Related:**
+{% for item in related %}
+- {{ item }}
+{% endfor %}
+{% endif %}

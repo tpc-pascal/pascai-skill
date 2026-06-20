@@ -1,0 +1,15 @@
+name: headroom_compress
+description: Compress content before sending to LLM
+inputs:
+  content:
+    type: string
+    description: Content to compress
+  max_chars:
+    type: integer
+    default: 4000
+  preserve_code_blocks:
+    type: boolean
+    default: true
+output:
+  type: string
+  description: Compressed content

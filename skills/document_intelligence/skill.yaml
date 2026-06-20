@@ -1,0 +1,20 @@
+skill:
+  id: document_intelligence
+  name: Document Intelligence
+  version: 0.1.0
+  description: Converts PDF, DOCX, PPTX, XLSX, and images to Markdown using Docling
+    upstream
+  author: pascai
+  tags:
+  - document
+  - pdf
+  - conversion
+  - markdown
+  - docling
+  adapter_compat:
+  - '*'
+  upstream:
+    url: https://github.com/docling-project/docling
+    branch: main
+    commit_hash: 898dd7330dc15a8c9d7294df1aea409e74cf396c
+    last_sync: '2026-06-20T00:42:07.511147+00:00'

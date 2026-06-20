@@ -1,0 +1,21 @@
+skill:
+  id: context_compression
+  name: Context Compression
+  version: 0.1.0
+  description: Compresses logs, JSON, tool responses, and RAG chunks before LLM submission
+    using Headroom upstream
+  author: pascai
+  tags:
+  - compression
+  - context
+  - logs
+  - json
+  - rag
+  - headroom
+  adapter_compat:
+  - '*'
+  upstream:
+    url: https://github.com/chopratejas/headroom
+    branch: main
+    commit_hash: 3fc2a78a5e20f159f7c5f198de6b91788dc64287
+    last_sync: '2026-06-20T00:42:06.177079+00:00'

@@ -1,0 +1,19 @@
+skill:
+  id: documentation
+  name: Documentation Generator
+  version: 0.1.0
+  description: Generates searchable documentation websites synchronized with skills
+    and examples using Docusaurus upstream
+  author: pascai
+  tags:
+  - docs
+  - documentation
+  - docusaurus
+  - static-site
+  adapter_compat:
+  - '*'
+  upstream:
+    url: https://github.com/facebook/docusaurus
+    branch: main
+    commit_hash: 7434ba505756126471cc19257b86f0ed086dea40
+    last_sync: '2026-06-20T00:42:08.902921+00:00'

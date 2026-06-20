@@ -1,0 +1,21 @@
+skill:
+  id: long_term_memory
+  name: Long Term Memory
+  version: 0.1.0
+  description: Stores architecture info, conventions, business rules, todos, and bugs
+    using Ponytail upstream
+  author: pascai
+  tags:
+  - memory
+  - conventions
+  - architecture
+  - todos
+  - bugs
+  - ponytail
+  adapter_compat:
+  - '*'
+  upstream:
+    url: https://github.com/DietrichGebert/ponytail
+    branch: main
+    commit_hash: 0403c4dd50ee6d0db2c3ec70b2be6655f9cb65a9
+    last_sync: '2026-06-20T00:42:10.580224+00:00'

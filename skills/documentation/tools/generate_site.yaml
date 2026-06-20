@@ -1,0 +1,15 @@
+name: docusaurus_generate
+description: Generate a Docusaurus documentation site from skills
+inputs:
+  output_dir:
+    type: string
+    description: Output directory for the generated site
+  title:
+    type: string
+    default: pascai AI Runtime Documentation
+  include_examples:
+    type: boolean
+    default: true
+output:
+  type: string
+  description: Path to generated site

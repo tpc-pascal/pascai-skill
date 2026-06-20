@@ -1,0 +1,17 @@
+name: ponytail_store
+description: Store a long-term memory entry
+inputs:
+  category:
+    type: string
+    enum: [architecture, conventions, business_rules, todos, known_bugs]
+  title:
+    type: string
+  content:
+    type: string
+  tags:
+    type: array
+    items:
+      type: string
+output:
+  type: string
+  description: Memory entry ID
