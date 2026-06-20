@@ -34,11 +34,11 @@ Hệ điều hành AI di động — Portable AI Operating System cho đa tác t
 
 | Skill | Upstream | Chức năng |
 |---|---|---|
-| Document Intelligence | Docling | PDF, DOCX, PPTX, XLSX, images → Markdown |
-| Long Term Memory | Ponytail | Lưu architecture, conventions, todos, bugs |
-| Context Compression | Headroom | Nén logs, JSON, tool responses, RAG |
-| UI & Design Intelligence | Taste Skill | Typography, spacing, 4 design profiles |
-| Documentation Generator | Docusaurus | Tạo site tài liệu từ skills |
+| Document Intelligence | [Docling](https://github.com/docling-project/docling) | PDF, DOCX, PPTX, XLSX, images → Markdown |
+| Long Term Memory | [Ponytail](https://github.com/DietrichGebert/ponytail) | Lưu architecture, conventions, todos, bugs |
+| Context Compression | [Headroom](https://github.com/chopratejas/headroom) | Nén logs, JSON, tool responses, RAG |
+| UI & Design Intelligence | [Taste Skill](https://github.com/Leonxlnx/taste-skill) | Typography, spacing, 4 design profiles |
+| Documentation Generator | [Docusaurus](https://github.com/facebook/docusaurus) | Tạo site tài liệu từ skills |
 
 ---
 
