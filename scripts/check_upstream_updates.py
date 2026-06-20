@@ -12,7 +12,6 @@ Chức năng:
 import json
 import os
 import re
-import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -155,7 +154,7 @@ def main():
         print(f"    Latest:  {new_sha}")
 
         if old_sha and old_sha.startswith(new_sha):
-            print(f"    -> Up-to-date")
+            print("    -> Up-to-date")
             versions[skill_id] = {
                 "commit_hash": result["sha"],
                 "short_hash": new_sha,
@@ -179,7 +178,7 @@ def main():
                 "url": result["url"],
             })
         else:
-            print(f"    -> First check")
+            print("    -> First check")
 
         versions[skill_id] = {
             "commit_hash": result["sha"],

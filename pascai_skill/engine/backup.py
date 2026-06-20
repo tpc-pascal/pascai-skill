@@ -52,7 +52,6 @@ class BackupManager:
     def get_backup_info(self, backup_path: Path) -> dict:
         if not backup_path.exists():
             return {}
-        parts = backup_path.stem.split("-")
         return {
             "path": str(backup_path),
             "filename": backup_path.name,

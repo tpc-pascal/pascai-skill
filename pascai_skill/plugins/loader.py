@@ -4,7 +4,7 @@ import importlib
 import inspect
 import pkgutil
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Type
+from typing import List, Optional
 
 from pascai_skill.core.base_skill import BaseSkill
 from pascai_skill.core.interfaces import IAdapter, ISkill

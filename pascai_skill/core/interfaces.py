@@ -11,7 +11,6 @@ from pascai_skill.core.models import (
     MigrationReport,
     SkillManifest,
     SkillMetadata,
-    SyncRecord,
     UpstreamInfo,
 )
 

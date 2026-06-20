@@ -2,11 +2,10 @@ from __future__ import annotations
 
 import asyncio
 from pathlib import Path
-from typing import Optional
+
 
 import click
 from rich.console import Console
-from rich.table import Table
 
 from pascai_skill.cli.commands import (
     adapter_cmd,

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 from pascai_skill.core.base_skill import BaseSkill
 from pascai_skill.core.exceptions import SkillNotFoundError

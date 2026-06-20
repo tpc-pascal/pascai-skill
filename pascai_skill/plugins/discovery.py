@@ -3,8 +3,6 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from pascai_skill.core.base_skill import BaseSkill
-from pascai_skill.core.interfaces import IAdapter, ISkill
 from pascai_skill.core.models import SkillManifest
 from pascai_skill.plugins.loader import PluginLoader
 from pascai_skill.skills.registry import SkillRegistry

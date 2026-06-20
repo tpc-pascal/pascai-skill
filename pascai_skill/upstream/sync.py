@@ -1,11 +1,9 @@
 from __future__ import annotations
 
-import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import List, Optional
 
-from pascai_skill.core.exceptions import UpstreamSyncError
 from pascai_skill.core.models import SyncRecord, UpstreamInfo
 from pascai_skill.upstream.repository import GitUpstreamRepository
 from pascai_skill.upstream.version_db import VersionDatabase

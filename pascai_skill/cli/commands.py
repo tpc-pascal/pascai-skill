@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import asyncio
 from pathlib import Path
-from typing import List, Optional
+
 
 import click
 from rich.console import Console
@@ -15,7 +15,6 @@ from pascai_skill.core.models import SkillStatus, MemoryEntry, KnowledgeEntry
 from pascai_skill.installer.bootstrap import Bootstrap
 from pascai_skill.knowledge.base import KnowledgeBase
 from pascai_skill.memory.store import MemoryStore
-from pascai_skill.plugins.discovery import AutoDiscovery
 from pascai_skill.plugins.loader import PluginLoader
 from pascai_skill.skills.manager import SkillManager
 from pascai_skill.skills.metadata import SkillMetadataLoader

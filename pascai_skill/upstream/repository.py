@@ -37,7 +37,7 @@ class GitUpstreamRepository(IUpstreamRepository):
         try:
             repo = Repo(str(upstream.local_path))
             origin = repo.remotes.origin
-            fetch_info = origin.fetch()
+            origin.fetch()
             old_hash = upstream.commit_hash
             new_hash = str(repo.head.commit.hexsha)
             return old_hash != new_hash
