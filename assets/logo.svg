@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="120" rx="16" fill="#1a1a2e"/>
+  <text x="40" y="55" font-family="system-ui,sans-serif" font-size="28" font-weight="700" fill="url(#g)">pascai</text>
+  <text x="40" y="85" font-family="system-ui,sans-serif" font-size="18" font-weight="400" fill="#8892b0">skill</text>
+  <text x="150" y="70" font-family="monospace" font-size="12" fill="#4a5568">AI Operating System</text>
+  <circle cx="360" cy="40" r="20" fill="none" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+  <circle cx="360" cy="40" r="8" fill="#764ba2" opacity="0.8"/>
+  <line x1="345" y1="90" x2="375" y2="70" stroke="#667eea" stroke-width="1.5" opacity="0.6"/>
+</svg>
