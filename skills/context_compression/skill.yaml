@@ -17,5 +17,5 @@ skill:
   upstream:
     url: https://github.com/chopratejas/headroom
     branch: main
-    commit_hash: 3fc2a78a5e20f159f7c5f198de6b91788dc64287
-    last_sync: '2026-06-20T00:42:06.177079+00:00'
+    commit_hash: f4bd2fe68f0fe8071082380dad0a2eedbfbeb5cd
+    last_sync: '2026-06-21T02:59:59.855096+00:00'
