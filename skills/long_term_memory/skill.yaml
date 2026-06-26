@@ -17,5 +17,5 @@ skill:
   upstream:
     url: https://github.com/DietrichGebert/ponytail
     branch: main
-    commit_hash: a945778b4a73b0b78c3c781a594b62cd3a324637
-    last_sync: '2026-06-25T02:39:35.851188+00:00'
+    commit_hash: c4d1925ae9b76a1b641877328209ad25cfeb5ef2
+    last_sync: '2026-06-26T02:42:41.913122+00:00'

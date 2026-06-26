@@ -15,5 +15,5 @@ skill:
   upstream:
     url: https://github.com/facebook/docusaurus
     branch: main
-    commit_hash: 7434ba505756126471cc19257b86f0ed086dea40
-    last_sync: '2026-06-20T00:42:08.902921+00:00'
+    commit_hash: 5d162a4654b105aa9cc66dc38ddbc367d81be230
+    last_sync: '2026-06-26T02:42:41.549361+00:00'
