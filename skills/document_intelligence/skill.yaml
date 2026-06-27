@@ -16,5 +16,5 @@ skill:
   upstream:
     url: https://github.com/docling-project/docling
     branch: main
-    commit_hash: 011469074fe53bdde54315ee1120c40710c3c00a
-    last_sync: '2026-06-25T02:39:35.126941+00:00'
+    commit_hash: 8d747a354f1068d2092bed24f8283988d8553608
+    last_sync: '2026-06-27T02:34:32.385757+00:00'
